@@ -2036,6 +2036,51 @@ set @resources='
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.ValidationRules.ViewLink">
     <Value>Edit rules</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayBlogMenuItem">
+    <Value>Display "blog"</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayBlogMenuItem.Hint">
+    <Value>Check if "blog" menu item should be displayed in the top menu.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayForumsMenuItem">
+    <Value>Display "forums"</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayForumsMenuItem.Hint">
+    <Value>Check if "forums" menu item should be displayed in the top menu.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayContactUsMenuItem">
+    <Value>Display "contact us"</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayContactUsMenuItem.Hint">
+    <Value>Check if "contact us" menu item should be displayed in the top menu.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayCustomerInfoMenuItem">
+    <Value>Display "customer info"</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayCustomerInfoMenuItem.Hint">
+    <Value>Check if "customer info" menu item should be displayed in the top menu.</Value>
+  </LocaleResource>  
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayHomePageMenuItem">
+    <Value>Display "home page"</Value>
+  </LocaleResource>  
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayHomePageMenuItem.Hint">
+    <Value>Check if "home page" menu item should be displayed in the top menu.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayNewProductsMenuItem">
+    <Value>Display "new products"</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayNewProductsMenuItem.Hint">
+    <Value>Check if "new products" menu item should be displayed in the top menu.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayProductSearchMenuItem">
+    <Value>Display "product search"</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayProductSearchMenuItem.Hint">
+    <Value>Check if "product search" menu item should be displayed in the top menu.</Value>
+  </LocaleResource>  
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.BlockTitle.TopMenuItems">
+    <Value>Top menu items</Value>
+  </LocaleResource>    
 </Language>
 '
 
@@ -4662,4 +4707,61 @@ END
 
 CLOSE cursor_defaultGroup
 DEALLOCATE cursor_defaultGroup
+GO
+
+--indicating whether to display default menu items
+DECLARE @displayMenuItems bit
+IF NOT EXISTS (SELECT 1 FROM [Category] where ParentCategoryId=0 and Deleted=0 and Published=1)
+	set @displayMenuItems = N'True'
+ELSE
+    set @displayMenuItems = N'False'
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'displaydefaultmenuitemsettings.displayhomepagemenuitem')
+BEGIN
+    INSERT [Setting] ([Name], [Value], [StoreId])
+    VALUES (N'displaydefaultmenuitemsettings.displayhomepagemenuitem', @displayMenuItems, 0)
+END
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'displaydefaultmenuitemsettings.displaynewproductsmenuitem')
+BEGIN
+    INSERT [Setting] ([Name], [Value], [StoreId])
+    VALUES (N'displaydefaultmenuitemsettings.displaynewproductsmenuitem', @displayMenuItems, 0)
+END
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'displaydefaultmenuitemsettings.displayproductsearchmenuitem')
+BEGIN
+    INSERT [Setting] ([Name], [Value], [StoreId])
+    VALUES (N'displaydefaultmenuitemsettings.displayproductsearchmenuitem', @displayMenuItems, 0)
+END
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'displaydefaultmenuitemsettings.displaycustomerinfomenuitem')
+BEGIN
+    INSERT [Setting] ([Name], [Value], [StoreId])
+    VALUES (N'displaydefaultmenuitemsettings.displaycustomerinfomenuitem', @displayMenuItems, 0)
+END
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'displaydefaultmenuitemsettings.displayblogmenuitem')
+BEGIN
+    INSERT [Setting] ([Name], [Value], [StoreId])
+    VALUES (N'displaydefaultmenuitemsettings.displayblogmenuitem', @displayMenuItems, 0)
+END
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'displaydefaultmenuitemsettings.displayforumsmenuitem')
+BEGIN
+    INSERT [Setting] ([Name], [Value], [StoreId])
+    VALUES (N'displaydefaultmenuitemsettings.displayforumsmenuitem', @displayMenuItems, 0)
+END
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'displaydefaultmenuitemsettings.displaycontactusmenuitem ')
+BEGIN
+    INSERT [Setting] ([Name], [Value], [StoreId])
+    VALUES (N'displaydefaultmenuitemsettings.displaycontactusmenuitem ', @displayMenuItems, 0)
+END
 GO
