@@ -8,5 +8,15 @@ namespace Nop.Web.Framework.Validators
         {
             return ruleBuilder.SetValidator(new CreditCardPropertyValidator());
         }
+
+        public static IRuleBuilderOptions<T, int> IsInt<T>(this IRuleBuilder<T, int> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new IntPropertyValidator());
+        }
+
+        public static IRuleBuilderOptions<T, decimal> IsDecimal<T>(this IRuleBuilder<T, decimal> ruleBuilder, decimal maxValue)
+        {
+            return ruleBuilder.SetValidator(new DecimalPropertyValidator(maxValue));
+        }
     }
 }

@@ -2099,6 +2099,9 @@ set @resources='
   <LocaleResource Name="Admin.Configuration.Settings.Media.DefaultPictureZoomEnabled.Hint">
     <Value>Check to enable picture zoom on product details page.</Value>
   </LocaleResource> 
+  <LocaleResource Name="Nop.Web.Framework.Validators.MaxDecimal">
+    <Value>The value is out of range. Maximum value is {0}.99</Value>
+  </LocaleResource>   
 </Language>
 '
 
