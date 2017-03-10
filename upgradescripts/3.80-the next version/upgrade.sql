@@ -2037,46 +2037,46 @@ set @resources='
     <Value>Edit rules</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayBlogMenuItem">
-    <Value>Display "blog"</Value>
+    <Value>Display "Blog"</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayBlogMenuItem.Hint">
-    <Value>Check if "blog" menu item should be displayed in the top menu.</Value>
+    <Value>Check if "Blog" menu item should be displayed in the top menu.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayForumsMenuItem">
-    <Value>Display "forums"</Value>
+    <Value>Display "Forums"</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayForumsMenuItem.Hint">
-    <Value>Check if "forums" menu item should be displayed in the top menu.</Value>
+    <Value>Check if "Forums" menu item should be displayed in the top menu.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayContactUsMenuItem">
-    <Value>Display "contact us"</Value>
+    <Value>Display "Contact us"</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayContactUsMenuItem.Hint">
-    <Value>Check if "contact us" menu item should be displayed in the top menu.</Value>
+    <Value>Check if "Contact us" menu item should be displayed in the top menu.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayCustomerInfoMenuItem">
-    <Value>Display "customer info"</Value>
+    <Value>Display "My account"</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayCustomerInfoMenuItem.Hint">
-    <Value>Check if "customer info" menu item should be displayed in the top menu.</Value>
+    <Value>Check if "My account" menu item should be displayed in the top menu.</Value>
   </LocaleResource>  
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayHomePageMenuItem">
-    <Value>Display "home page"</Value>
+    <Value>Display "Home page"</Value>
   </LocaleResource>  
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayHomePageMenuItem.Hint">
-    <Value>Check if "home page" menu item should be displayed in the top menu.</Value>
+    <Value>Check if "Home page" menu item should be displayed in the top menu.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayNewProductsMenuItem">
-    <Value>Display "new products"</Value>
+    <Value>Display "New products"</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayNewProductsMenuItem.Hint">
-    <Value>Check if "new products" menu item should be displayed in the top menu.</Value>
+    <Value>Check if "New products" menu item should be displayed in the top menu.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayProductSearchMenuItem">
-    <Value>Display "product search"</Value>
+    <Value>Display "Search"</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultMenuItemSettings.DisplayProductSearchMenuItem.Hint">
-    <Value>Check if "product search" menu item should be displayed in the top menu.</Value>
+    <Value>Check if "Search" menu item should be displayed in the top menu.</Value>
   </LocaleResource>  
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.BlockTitle.TopMenuItems">
     <Value>Top menu items</Value>
