@@ -996,6 +996,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Plugins\bin\" />
+	<Content Include="Plugins\**\*.*" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\Nop.Core\Nop.Core.csproj">
