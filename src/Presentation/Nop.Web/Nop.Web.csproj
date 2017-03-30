@@ -996,7 +996,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Plugins\bin\" />
-	<Content Include="Plugins\**\*.*" />
+	<Content Include="Plugins\**\*.*">
+	  <CopyToOutputDirectory>True</CopyToOutputDirectory>
+	</Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\Nop.Core\Nop.Core.csproj">
