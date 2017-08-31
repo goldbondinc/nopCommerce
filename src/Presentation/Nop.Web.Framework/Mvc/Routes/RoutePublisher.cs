@@ -63,7 +63,12 @@ namespace Nop.Web.Framework.Mvc.Routes
                 var provider = Activator.CreateInstance(providerType) as IRouteProvider;
                 routeProviders.Add(provider);
             }
-            routeProviders = routeProviders.OrderByDescending(rp => rp.Priority).ToList();
+
+            // Put all non-GoldBond plugins above GoldBond plugins with the same priority.
+            routeProviders = routeProviders
+                .OrderByDescending(rp => rp.Priority)
+                .ThenByDescending(rp => !rp.GetType().FullName?.StartsWith("GoldBond."))
+                .ToList();
             routeProviders.ForEach(rp => rp.RegisterRoutes(routes));
         }
     }
